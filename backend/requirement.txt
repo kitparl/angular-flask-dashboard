@@ -1,0 +1,6 @@
+pip install flask==2.3.2
+pip install flask-mysql==1.5.2
+pip install timeago==1.0.15
+pip install flask-cors
+
+
