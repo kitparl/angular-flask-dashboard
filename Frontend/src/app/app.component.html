@@ -1,0 +1,425 @@
+<header>
+  <h1>BlackCoffer Dashboard Assignment</h1>
+</header>
+<div>
+  <div>
+    <h2>Intensity</h2>
+  </div>
+  <div>
+  <ul id="menu">
+    <li class="parent"><a href="#">Yearly Basis</a>
+        <ul class="child">
+            <li class="parent"><a href="#">Select Year <span class="expand">»</span></a>
+                <ul class="child">
+                  <li *ngFor="let item of lastFiveYears">
+                    <a href="#" (click)="handleClick($event, 'YEAR', item)">{{ item }}</a>
+                  </li>
+                </ul></li>
+            <li><a href="#"  (click)="handleClick($event, 'YEAR', '2023')">Last Year</a></li>
+            <li><a href="#" (click)="handleClick($event, 'YEAR', '2022')">Second Last Year</a></li>
+        </ul></li>
+    <li class="parent"><a href="#">Region Wise</a>
+        <ul class="child">
+            <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'India')">India</a></li>
+            <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Singapore')">Singapore</a></li>
+            <li class="parent"><a href="#">Country<span class="expand">»</span></a>
+                <ul class="child">
+                    <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United Kingdom')">United Kingdom</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'China')">China</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Canada')">Canada</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United States of America')">USA</a></li>
+
+
+                </ul></li>
+            <li class="parent"><a href="#">City<span class="expand">»</span></a>
+                  <ul class="child">
+                    <li><a href="#" (click)="handleClick($event, 'CITY', 'Miami')">Miami</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'CITY', 'Hong Kong')">Hong Kong</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'CITY', 'London')">London</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'CITY', 'Boston')">Boston</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'CITY', 'Atlanta')">Atlanta</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'CITY', 'Moscow')">Moscow</a></li>
+
+                  </ul></li>
+        </ul></li>
+    <li class="parent"><a href="#">Other Category</a>
+        <ul class="child">
+            <li><a href="#" (click)="handleClick($event, 'REGION', 'World')">World</a></li>
+
+            <li class="parent"><a href="#">Swot<span class="expand">»</span></a>
+              <ul class="child">
+                <li><a href="#" (click)="handleClick($event, 'SWOT', 'Strength')">Strength</a></li>
+                <li><a href="#" (click)="handleClick($event, 'SWOT', 'Opportunity')">Opportunity</a></li>
+                <li><a href="#" (click)="handleClick($event, 'SWOT', 'Weakness')">Weakness</a></li>
+                <li><a href="#" (click)="handleClick($event, 'SWOT', 'Threat')">Threat</a></li>
+              </ul></li>
+                <li class="parent"><a href="#">Pestle<span class="expand">»</span></a>
+                  <ul class="child">
+
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Technological')">Technological</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Healthcare')">Healthcare</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Environmental')">Environmental</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Economic')">Economic</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Political')">Political</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Organization')">Organization</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Lifestyles')">Lifestyles</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Social')">Social</a></li>
+                    <li><a href="#" (click)="handleClick($event, 'PEST', 'Industries')">Industries</a></li>
+
+                  </ul></li>
+
+                  <li class="parent"><a href="#">Topics<span class="expand">»</span></a>
+                    <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'research')">Research</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'electricity')">Electricity</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'investment')">Investment</a></li>  
+                    </ul></li>
+        </ul></li>
+</ul>
+</div>
+<div>
+<app-bar></app-bar>
+</div>
+</div>
+
+
+<div>
+  <div>
+    <h2>Likelihood</h2>
+  </div>
+  <div>
+    <ul id="menu">
+      <li class="parent"><a href="#">Yearly Basis</a>
+          <ul class="child">
+              <li class="parent"><a href="#">Select Year <span class="expand">»</span></a>
+                  <ul class="child">
+                    <li *ngFor="let item of lastFiveYears">
+                      <a href="#" (click)="handleClick($event, 'YEAR', item)">{{ item }}</a>
+                    </li>
+                  </ul></li>
+              <li><a href="#"  (click)="handleClick($event, 'YEAR', currentYear.toString())">Last Year</a></li>
+              <li><a href="#" (click)="handleClick($event, 'YEAR', (currentYear - 1).toString())">Second Last Year</a></li>
+          </ul></li>
+      <li class="parent"><a href="#">Region Wise</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'India')">India</a></li>
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Singapore')">Singapore</a></li>
+              <li class="parent"><a href="#">Country<span class="expand">»</span></a>
+                  <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United Kingdom')">United Kingdom</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'China')">China</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Canada')">Canada</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United States of America')">USA</a></li>
+  
+  
+                  </ul></li>
+              <li class="parent"><a href="#">City<span class="expand">»</span></a>
+                    <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Miami')">Miami</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Hong Kong')">Hong Kong</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'London')">London</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Boston')">Boston</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Atlanta')">Atlanta</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Moscow')">Moscow</a></li>
+  
+                    </ul></li>
+          </ul></li>
+      <li class="parent"><a href="#">Other Category</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'REGION', 'World')">World</a></li>
+  
+              <li class="parent"><a href="#">Swot<span class="expand">»</span></a>
+                <ul class="child">
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Strength')">Strength</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Opportunity')">Opportunity</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Weakness')">Weakness</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Threat')">Threat</a></li>
+                </ul></li>
+  
+                  <li class="parent"><a href="#">Pestle<span class="expand">»</span></a>
+                    <ul class="child">
+  
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Technological')">Technological</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Healthcare')">Healthcare</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Environmental')">Environmental</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Economic')">Economic</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Political')">Political</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Organization')">Organization</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Lifestyles')">Lifestyles</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Social')">Social</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Industries')">Industries</a></li>
+  
+                    </ul></li>
+  
+                    <li class="parent"><a href="#">Topics<span class="expand">»</span></a>
+                      <ul class="child">
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'research')">Research</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'electricity')">Electricity</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'investment')">Investment</a></li>  
+                      </ul></li>
+          </ul></li>
+  </ul>
+  </div>
+<div>
+  <app-pie></app-pie>
+</div>
+</div>
+
+
+<div>
+  <div>
+    <h2>Relevance</h2>
+  </div>
+  <div>
+    <ul id="menu">
+      <li class="parent"><a href="#">Yearly Basis</a>
+          <ul class="child">
+              <li class="parent"><a href="#">Select Year <span class="expand">»</span></a>
+                  <ul class="child">
+                    <li *ngFor="let item of lastFiveYears">
+                      <a href="#" (click)="handleClick($event, 'YEAR', item)">{{ item }}</a>
+                    </li>
+                  </ul></li>
+              <li><a href="#"  (click)="handleClick($event, 'YEAR', '2023')">Last Year</a></li>
+              <li><a href="#" (click)="handleClick($event, 'YEAR', '2022')">Second Last Year</a></li>
+          </ul></li>
+      <li class="parent"><a href="#">Region Wise</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'India')">India</a></li>
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Singapore')">Singapore</a></li>
+              <li class="parent"><a href="#">Country<span class="expand">»</span></a>
+                  <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United Kingdom')">United Kingdom</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'China')">China</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Canada')">Canada</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United States of America')">USA</a></li>
+  
+  
+                  </ul></li>
+              <li class="parent"><a href="#">City<span class="expand">»</span></a>
+                    <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Miami')">Miami</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Hong Kong')">Hong Kong</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'London')">London</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Boston')">Boston</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Atlanta')">Atlanta</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Moscow')">Moscow</a></li>
+  
+                    </ul></li>
+          </ul></li>
+      <li class="parent"><a href="#">Other Category</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'REGION', 'World')">World</a></li>
+  
+              <li class="parent"><a href="#">Swot<span class="expand">»</span></a>
+                <ul class="child">
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Strength')">Strength</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Opportunity')">Opportunity</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Weakness')">Weakness</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Threat')">Threat</a></li>
+                </ul></li>
+  
+                  <li class="parent"><a href="#">Pestle<span class="expand">»</span></a>
+                    <ul class="child">
+  
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Technological')">Technological</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Healthcare')">Healthcare</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Environmental')">Environmental</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Economic')">Economic</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Political')">Political</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Organization')">Organization</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Lifestyles')">Lifestyles</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Social')">Social</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Industries')">Industries</a></li>
+  
+                    </ul></li>
+  
+                    <li class="parent"><a href="#">Topics<span class="expand">»</span></a>
+                      <ul class="child">
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'research')">Research</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'electricity')">Electricity</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'investment')">Investment</a></li>  
+                      </ul></li>
+          </ul></li>
+  </ul>
+  </div>
+  <div>
+    <app-scatter></app-scatter>
+  </div>
+</div>
+
+
+<div>
+  <div>
+    <h2>Impact</h2>
+  </div>
+  <div>
+    <ul id="menu">
+      <li class="parent"><a href="#">Yearly Basis</a>
+          <ul class="child">
+              <li class="parent"><a href="#">Select Year <span class="expand">»</span></a>
+                  <ul class="child">
+                    <li *ngFor="let item of lastFiveYears">
+                      <a href="#" (click)="handleClick($event, 'YEAR', item)">{{ item }}</a>
+                    </li>
+                  </ul></li>
+              <li><a href="#"  (click)="handleClick($event, 'YEAR', '2023')">Last Year</a></li>
+              <li><a href="#" (click)="handleClick($event, 'YEAR', '2022')">Second Last Year</a></li>
+          </ul></li>
+      <li class="parent"><a href="#">Region Wise</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'India')">India</a></li>
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Singapore')">Singapore</a></li>
+              <li class="parent"><a href="#">Country<span class="expand">»</span></a>
+                  <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United Kingdom')">United Kingdom</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'China')">China</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Canada')">Canada</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United States of America')">USA</a></li>
+  
+  
+                  </ul></li>
+              <li class="parent"><a href="#">City<span class="expand">»</span></a>
+                    <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Miami')">Miami</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Hong Kong')">Hong Kong</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'London')">London</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Boston')">Boston</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Atlanta')">Atlanta</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Moscow')">Moscow</a></li>
+  
+                    </ul></li>
+          </ul></li>
+      <li class="parent"><a href="#">Other Category</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'REGION', 'World')">World</a></li>
+  
+              <li class="parent"><a href="#">Swot<span class="expand">»</span></a>
+                <ul class="child">
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Strength')">Strength</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Opportunity')">Opportunity</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Weakness')">Weakness</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Threat')">Threat</a></li>
+                </ul></li>
+  
+                  <li class="parent"><a href="#">Pestle<span class="expand">»</span></a>
+                    <ul class="child">
+  
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Technological')">Technological</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Healthcare')">Healthcare</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Environmental')">Environmental</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Economic')">Economic</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Political')">Political</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Organization')">Organization</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Lifestyles')">Lifestyles</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Social')">Social</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Industries')">Industries</a></li>
+  
+                    </ul></li>
+  
+                    <li class="parent"><a href="#">Topics<span class="expand">»</span></a>
+                      <ul class="child">
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'research')">Research</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'electricity')">Electricity</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'investment')">Investment</a></li>  
+                      </ul></li>
+          </ul></li>
+  </ul>
+  </div>
+  <div>
+    <app-donut></app-donut>
+  </div>
+</div>
+
+
+<div>
+  <div>
+    <h2>Topics</h2>
+  </div>
+  <div>
+    <ul id="menu">
+      <li class="parent"><a href="#">Yearly Basis</a>
+          <ul class="child">
+              <li class="parent"><a href="#">Select Year <span class="expand">»</span></a>
+                  <ul class="child">
+                    <li *ngFor="let item of lastFiveYears">
+                      <a href="#" (click)="handleClick($event, 'YEAR', item)">{{ item }}</a>
+                    </li>
+                  </ul></li>
+              <li><a href="#"  (click)="handleClick($event, 'YEAR', '2023')">Last Year</a></li>
+              <li><a href="#" (click)="handleClick($event, 'YEAR', '2022')">Second Last Year</a></li>
+          </ul></li>
+      <li class="parent"><a href="#">Region Wise</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'India')">India</a></li>
+              <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Singapore')">Singapore</a></li>
+              <li class="parent"><a href="#">Country<span class="expand">»</span></a>
+                  <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United Kingdom')">United Kingdom</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'China')">China</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Canada')">Canada</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'Australia')">Australia</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'COUNTRY', 'United States of America')">USA</a></li>
+  
+  
+                  </ul></li>
+              <li class="parent"><a href="#">City<span class="expand">»</span></a>
+                    <ul class="child">
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Miami')">Miami</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Hong Kong')">Hong Kong</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'London')">London</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Boston')">Boston</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Atlanta')">Atlanta</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'CITY', 'Moscow')">Moscow</a></li>
+  
+                    </ul></li>
+          </ul></li>
+      <li class="parent"><a href="#">Other Category</a>
+          <ul class="child">
+              <li><a href="#" (click)="handleClick($event, 'REGION', 'World')">World</a></li>
+  
+              <li class="parent"><a href="#">Swot<span class="expand">»</span></a>
+                <ul class="child">
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Strength')">Strength</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Opportunity')">Opportunity</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Weakness')">Weakness</a></li>
+                  <li><a href="#" (click)="handleClick($event, 'SWOT', 'Threat')">Threat</a></li>
+                </ul></li>
+
+                  <li class="parent"><a href="#">Pestle<span class="expand">»</span></a>
+                    <ul class="child">
+  
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Technological')">Technological</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Healthcare')">Healthcare</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Environmental')">Environmental</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Economic')">Economic</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Political')">Political</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Organization')">Organization</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Lifestyles')">Lifestyles</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Social')">Social</a></li>
+                      <li><a href="#" (click)="handleClick($event, 'PEST', 'Industries')">Industries</a></li>
+  
+                    </ul></li>
+  
+                    <li class="parent"><a href="#">Topics<span class="expand">»</span></a>
+                      <ul class="child">
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'research')">Research</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'electricity')">Electricity</a></li>
+                        <li><a href="#" (click)="handleClick($event, 'CITY', 'investment')">Investment</a></li>  
+                      </ul></li>
+          </ul></li>
+  </ul>
+  </div>
+  <div>
+    <app-line></app-line>
+  </div>
+</div>
