@@ -4,6 +4,7 @@ from Controller.Controller import Controller
 from flask_cors import CORS
 
 app = Flask(__name__)
+
 CORS(app)
 
 # MySQL configuration
